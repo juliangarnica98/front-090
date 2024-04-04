@@ -13,9 +13,10 @@
   );
 </script>
 <template>
-  <div>
+  <div class="dark:bg-gray-800">
     <NuxtLayout>
-      <NuxtPage/>
+      <NuxtLoadingIndicator />
+      <NuxtPage />
     </NuxtLayout>
   </div>
 </template>

@@ -68,8 +68,8 @@
           id="regional"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
         >
-          <option v-for="regional in regionals" :value="regional.description">
-            {{ regional.description }}
+          <option v-for="(regional,index) in regionals" :value="regional.description" :key="index" >
+            <div class="" >{{ regional.description }}</div>
           </option>
         </select>
       </div>
@@ -183,14 +183,16 @@
         role:'Generalist'
     });
     const regionalf = async () => {
-        const { data, pending, error } = await useFetch(`http://127.0.0.1:8000/api/regionals`,{
+        const { data, pending, error } = await useFetch(`http://127.0.0.1:8000/api/regionals2`,{
                   method:"GET",
                   headers:{
                     Accept: "application/json",
                     Authorization: `Bearer ${token.getToken}`,
                   }
         });
-        regionals.value = data.value.data;                                                                                                                                                                              
+        // regionals.value = data.value.data.data.status == 1 ? data.value.data.data :'';                                                                                                                                                                              
+        regionals.value = data.value.data.data;
+        // console.log(regionals.value);
     }
     const submit = async ()=>{
         try{

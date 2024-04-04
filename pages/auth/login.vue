@@ -22,10 +22,10 @@
 </script>
 
 <template>
-   <div class="">
-      <section class="bg-violet-500 dark:bg-gray-900">
+   <div class="flex items-center justify-center border-0 border-gray-200 rounded-lg dark:border-gray-700 h-dvh max-h-full dark:bg-gray-800 bg-violet-500">
+   
           <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-              <a href="#" class="flex items-center mb-6 text-2xl text-white font-semibold text-gray-900 dark:text-white">
+              <a href="#" class="flex items-center mb-6 text-2xl text-white font-semibold text-gray-900 dark:text-white dark:bg-gray-800">
                   <img class="w-8 h-8 mr-2" :src="imageUrl" alt="logo">
                   Lilipink & Yoi   
               </a>
@@ -53,6 +53,6 @@
                   </div>
               </div>
           </div>
-        </section>
+        
   </div>
 </template>

@@ -17,15 +17,15 @@
               <label
                 for="message"
                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >Regional</label
+                >Tienda</label
               >
               <select
-                v-model="form.regional"
+                v-model="form.store"
                 id="regional"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
-                <option v-for="regional in regionals" :value="regional.description">
-                  {{ regional.description }}
+                <option v-for="store in stores" :value="store.id">
+                  {{ store.description }}
                 </option>
               </select>
             </div>
@@ -121,34 +121,37 @@
   
       const { $swal } = useNuxtApp();
       const token = useTokenStore();
-      const regionals = ref([]);
+      const stores = ref([]);
       const closeDrawerBtn = ref();
   
   
       const props = defineProps({
-          regional: String,
+          store: Number,
           user:Object,
       })
       const emit = defineEmits(['someEvent'])
   
       const form = reactive({
-          name: props.user.name,
-          last_name: props.user.last_name,
-          email:props.user.email,
-          password:null,
-          password_confirmation:null,
-          regional:props.user.regional,
-          role:'Generalist'
+      
+      
+        store:props.store,
+        name: props.user.name,
+        last_name: props.user.last_name,
+        email:props.user.email,
+        password:null,
+        password_confirmation:null,
+        regional:props.user.regional,
+        role:'Boss'
       });
       const regionalf = async () => {
-          const { data, pending, error } = await useFetch(`http://127.0.0.1:8000/api/regionals`,{
+          const { data, pending, error } = await useFetch(`http://127.0.0.1:8000/api/getstores`,{
                     method:"GET",
                     headers:{
                       Accept: "application/json",
                       Authorization: `Bearer ${token.getToken}`,
                     }
           });
-          regionals.value = data.value.data.data;                                                                                                                                                                              
+          stores.value = data.value.data;                                                                                                                                                                             
       }
       const submit = async ()=>{
           try{
@@ -162,22 +165,12 @@
                   }); 
               emit('someEvent');
               $swal.fire({title: "Se registro correctamente", icon: "success", timer: 2000,})
-              // resetForm();
               closeDrawerBtn.click();
         }catch (error){
           // errors.value = error.data.errors;
         }
       }
-      function resetForm (){
-          form.name = null,
-          form.last_name =null,
-          form.email=null,
-          form.password=null,
-          form.password_confirmation=null,
-          form.regional=null,
-          form.role='Generalist'
-      }
-  
+
       onMounted(async () => { 
           await nextTick();
           await regionalf();

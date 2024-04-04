@@ -1,4 +1,3 @@
-
 import { resolve } from 'path'
 import { createCommonJS } from 'mlly'
 const { __dirname } = createCommonJS(import.meta.url)
@@ -9,7 +8,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
-    '@pinia-plugin-persistedstate/nuxt'
+    '@pinia-plugin-persistedstate/nuxt',
   ],
   pinia: {
     storesDirs: ['./stores/**', './custom-folder/stores/**'],
