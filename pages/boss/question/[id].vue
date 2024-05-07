@@ -30,7 +30,7 @@
     const header = ref([]);
     const { $swal } = useNuxtApp();
     const answer = reactive([]);
-
+    const config = useRuntimeConfig();
     useHead({
         title:'SEMANA '+route.params.id
     })
@@ -45,7 +45,7 @@
 
     const questionf = async () => {
         try {
-          const { data, pending, error } = await useFetch(`http://127.0.0.1:8000/api/getquestion/${week}`,{
+          const { data, pending, error } = await useFetch(config.public.BASE_URL+`/getquestion/${week}`,{
             method:"GET",
             headers:{
               Accept: "application/json",
@@ -64,7 +64,7 @@
     }
     const submit = async ()=>{
         try{
-          await $fetch(`http://127.0.0.1:8000/api/respuesta`,{
+          await $fetch(config.public.BASE_URL+`/respuesta`,{
                    method:"POST",
                    headers:{
                      Accept: "application/json",

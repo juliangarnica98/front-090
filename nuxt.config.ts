@@ -52,9 +52,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      NUXT_API_AUTH_LOGIN: process.env.NUXT_API_AUTH_LOGIN,
-      NUXT_API_AUTH_LOGOUT: process.env.NUXT_API_AUTH_LOGOUT,
-      NUXT_API_AUTH_REGISTER: process.env.NUXT_API_AUTH_REGISTER
+      BASE_URL: process.env.BASE_URL,
     }
   }
 

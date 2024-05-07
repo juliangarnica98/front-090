@@ -12,7 +12,7 @@ export const useAuthStore = defineStore('auth', {
         async login (formData){
             const config = useRuntimeConfig();
             try{
-               const {data} = await $fetch(config.public.NUXT_API_AUTH_LOGIN,{
+               const {data} = await $fetch(config.public.BASE_URL+'/login',{
                   method:"POST",
                   body:{ ...formData},
                });
@@ -24,7 +24,7 @@ export const useAuthStore = defineStore('auth', {
           async register (formData){
             const config = useRuntimeConfig();
             try{
-               const {data} = await $fetch(config.public.NUXT_API_AUTH_REGISTER,{
+               const {data} = await $fetch(config.public.BASE_URL+'/register',{
                   method:"POST",
                   headers:{
                     Accept: "application/json",
@@ -41,7 +41,7 @@ export const useAuthStore = defineStore('auth', {
             const token = useTokenStore();
             const config = useRuntimeConfig();
             try{
-               const res = await $fetch(config.public.NUXT_API_AUTH_LOGOUT,{
+               const res = await $fetch(config.public.BASE_URL+'/logout',{
                   method:"POST",
                   headers:{
                     Accept: "application/json",

@@ -3,7 +3,6 @@ export const useTokenStore = defineStore('token', {
         {
             token: null, 
             loggedIn: false,
-
         }
     ),
     getters: {

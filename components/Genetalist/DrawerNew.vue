@@ -74,6 +74,7 @@
             placeholder=""
             required
           />
+          <span v-if="errors.description" class="text-red-500"> {{ errors.description[0] }}</span>
         </div>
         <button
           class="w-full text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
@@ -91,6 +92,9 @@
       const token = useTokenStore();
       const auth = useAuthStore();
       const closeDrawerBtn = ref();
+      const config = useRuntimeConfig();
+      const errors= ref([]);
+ 
   
   
       const props = defineProps({
@@ -105,7 +109,7 @@
      
       const submit = async ()=>{
           try{
-            await $fetch(`http://127.0.0.1:8000/api/stores`,{
+            await $fetch(config.public.BASE_URL+`/stores`,{
                      method:"POST",
                      headers:{
                        Accept: "application/json",
@@ -118,7 +122,7 @@
               resetForm();
               closeDrawerBtn.click();
         }catch (error){
-          // errors.value = error.data.errors;
+          errors.value = error.data.errors;
         }
       }
       function resetForm (){

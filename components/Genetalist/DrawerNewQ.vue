@@ -74,6 +74,7 @@
             placeholder=""
             required
           />
+          <span v-if="errors.description" class="text-red-500"> {{ errors.description[0] }}</span>
         </div>
         <div class="mb-3">
             <label
@@ -112,6 +113,8 @@
       const token = useTokenStore();
       const auth = useAuthStore();
       const closeDrawerBtn = ref();
+      const config = useRuntimeConfig();
+      const errors= ref([]);
   
       const emit = defineEmits(['someEvent'])
   
@@ -124,7 +127,7 @@
      
       const submit = async ()=>{
           try{
-            await $fetch(`http://127.0.0.1:8000/api/questions`,{
+            await $fetch(config.public.BASE_URL+`/questions`,{
                      method:"POST",
                      headers:{
                        Accept: "application/json",
@@ -137,7 +140,7 @@
               resetForm();
               closeDrawerBtn.click();
         }catch (error){
-          // errors.value = error.data.errors;
+          errors.value = error.data.errors;
         }
       }
       function resetForm (){

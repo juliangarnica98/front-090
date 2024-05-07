@@ -31,10 +31,11 @@
            <div class="mb-2">
              <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
              <input type="text" id="name" v-model="form.description"
-               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+               class="bg-gray-50 uppercase border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                placeholder=""
                required
              />
+             <span v-if="errors.description" class="text-red-500"> {{ errors.description[0] }}</span>
            </div>
          
         
@@ -53,6 +54,8 @@
      const token = useTokenStore();
      const regionals = ref([]);
      const closeDrawerBtn = ref();
+     const errors= ref([]);
+     const config = useRuntimeConfig();
  
  
      const props = defineProps({
@@ -67,7 +70,7 @@
 
      const submit = async ()=>{
          try{
-           await $fetch(`http://127.0.0.1:8000/api/regionals/${props.regional.id}`,{
+           await $fetch(config.public.BASE_URL+`/regionals/${props.regional.id}`,{
                     method:"PUT",
                     headers:{
                       Accept: "application/json",
@@ -80,7 +83,7 @@
          
              closeDrawerBtn.click();
        }catch (error){
-         // errors.value = error.data.errors;
+         errors.value = error.data.errors;
        }
      }
      onMounted(async () => { 

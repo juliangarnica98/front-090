@@ -72,6 +72,7 @@
             {{ store.description }}
           </option>
         </select>
+        <span v-if="errors.description" class="text-red-500"> {{ errors.description[0] }}</span>
       </div>
       <div class="mb-2">
         <label
@@ -118,6 +119,7 @@
           placeholder=""
           required
         />
+        <span v-if="errors.email" class="text-red-500"> {{ errors.email[0] }}</span>
       </div>
       <div class="mb-2">
         <label
@@ -133,6 +135,7 @@
           placeholder=""
           required
         />
+        <span v-if="errors.password" class="text-red-500"> {{ errors.password[0] }}</span>
       </div>
       <div class="mb-2">
         <label
@@ -167,6 +170,8 @@
     const user = useAuthStore();
     const stores = ref([]);
     const closeDrawerBtn = ref();
+    const config = useRuntimeConfig();
+    const errors= ref([]);
 
 
     const props = defineProps({
@@ -186,7 +191,7 @@
         regional:user.user.regional,
     });
     const tiendas = async () => {
-        const { data, pending, error } = await useFetch(`http://127.0.0.1:8000/api/getstores`,{
+        const { data, pending, error } = await useFetch(config.public.BASE_URL+`/getstores`,{
                   method:"GET",
                   headers:{
                     Accept: "application/json",
@@ -196,22 +201,26 @@
         stores.value = data.value.data;
     }
     const submit = async ()=>{
-        try{
-          await $fetch(`http://127.0.0.1:8000/api/register`,{
-                   method:"POST",
-                   headers:{
-                     Accept: "application/json",
-                     Authorization: `Bearer ${token.getToken}`,
-                   },
-                   body:{ ...form},
-                });
-            emit('someEvent');
-            $swal.fire({title: "Se registro correctamente", icon: "success", timer: 2000,})
-            resetForm();
-            closeDrawerBtn.click();
-      }catch (error){
-        // errors.value = error.data.errors;
-      }
+        if (form.store != null) {
+          try{
+            await $fetch(config.public.BASE_URL+`/register`,{
+                     method:"POST",
+                     headers:{
+                       Accept: "application/json",
+                       Authorization: `Bearer ${token.getToken}`,
+                     },
+                     body:{ ...form},
+                  });
+              emit('someEvent');
+              $swal.fire({title: "Se registro correctamente", icon: "success", timer: 2000,})
+              resetForm();
+              closeDrawerBtn.click();
+          }catch (error){
+            errors.value = error.data.errors;
+          }
+        }else{
+          $swal.fire({title: "Error", icon: "Debe seleecionar una tienda", timer: 2000,})
+        }
     }
     function resetForm (){
         form.name = null,

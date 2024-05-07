@@ -5,6 +5,7 @@
   const page = ref(1);
   const last_page = ref(0);
   const { $swal } = useNuxtApp();
+  const config = useRuntimeConfig();
   
   useHead({
     title: "users",
@@ -13,7 +14,7 @@
     middleware: ["auth"],
   });
   const product = async () => {
-    const { data, refresh } = await useFetch(()=>`http://127.0.0.1:8000/api/questions?page=${page.value}`,
+    const { data, refresh } = await useFetch(()=>config.public.BASE_URL+`/questions?page=${page.value}`,
       {
         method: "GET",
         headers: {
@@ -33,7 +34,7 @@
                 denyButtonText: `CANCELAR`
                 }).then((result) => {
                 if (result.isConfirmed) {
-                        useFetch(`http://127.0.0.1:8000/api/questions/${question}`,{
+                        useFetch(config.public.BASE_URL+`/questions/${question}`,{
                                 method:"DELETE",
                                 headers:{
                                     Accept: "application/json",

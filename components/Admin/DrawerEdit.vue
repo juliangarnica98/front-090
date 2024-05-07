@@ -24,10 +24,11 @@
                 id="regional"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
-                <option v-for="regional in regionals" :value="regional.description">
+              <option v-for="(regional,index) in regionals" :value="regional.description" :key="index" >
                   {{ regional.description }}
                 </option>
               </select>
+              <span v-if="errors.regional" class="text-red-500"> Debe seleccionar una regional</span>
             </div>
             <div class="mb-2">
               <label
@@ -74,6 +75,7 @@
                 placeholder=""
                 required
               />
+              <span v-if="errors.email" class="text-red-500"> {{ errors.email[0] }}</span>
             </div>
             <div class="mb-2">
               <label
@@ -89,6 +91,7 @@
                 placeholder=""
                 required
               />
+              <span v-if="errors.password" class="text-red-500"> {{ errors.password[0] }}</span>
             </div>
             <div class="mb-2">
               <label
@@ -123,7 +126,8 @@
       const token = useTokenStore();
       const regionals = ref([]);
       const closeDrawerBtn = ref();
-  
+      const errors= ref([]);
+      const config = useRuntimeConfig();
   
       const props = defineProps({
           regional: String,
@@ -141,7 +145,7 @@
           role:'Generalist'
       });
       const regionalf = async () => {
-          const { data, pending, error } = await useFetch(`http://127.0.0.1:8000/api/regionals`,{
+          const { data, pending, error } = await useFetch(config.public.BASE_URL+`/regionals`,{
                     method:"GET",
                     headers:{
                       Accept: "application/json",
@@ -152,7 +156,7 @@
       }
       const submit = async ()=>{
           try{
-            await $fetch(`http://127.0.0.1:8000/api/users/${props.user.id}`,{
+            await $fetch(config.public.BASE_URL+`/users/${props.user.id}`,{
                      method:"PUT",
                      headers:{
                        Accept: "application/json",
@@ -165,7 +169,7 @@
               // resetForm();
               closeDrawerBtn.click();
         }catch (error){
-          // errors.value = error.data.errors;
+          errors.value = error.data.errors;
         }
       }
       function resetForm (){

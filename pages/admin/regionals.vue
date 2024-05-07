@@ -5,6 +5,7 @@
   const page = ref(1);
   const last_page = ref(0);
   const { $swal } = useNuxtApp();
+  const config = useRuntimeConfig();
 
   useHead({
     title: "regionales",
@@ -14,7 +15,7 @@
   });
   const product = async () => {
     try {
-      const { data, refresh } = await useFetch(()=>`http://127.0.0.1:8000/api/regionals?page=${page.value}`,
+      const { data, refresh } = await useFetch(()=>config.public.BASE_URL+`/regionals?page=${page.value}`,
         {
           method: "GET",
           headers: {
@@ -38,7 +39,7 @@
         }).then((result) => {
         if (result.isConfirmed) {
             // try{
-                useFetch(`http://127.0.0.1:8000/api/regionals/${regional}`,{
+                useFetch(config.public.BASE_URL+`/regionals/${regional}`,{
                         method:"DELETE",
                         headers:{
                             Accept: "application/json",

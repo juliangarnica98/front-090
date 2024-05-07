@@ -86,6 +86,7 @@
     const token = useTokenStore();
     const users = ref([]);
     const { $swal } = useNuxtApp();
+    const config = useRuntimeConfig();
     
 
     useHead({
@@ -96,7 +97,7 @@
     })
     const usersf = async () => {
         try {
-            const { data, pending, error } = await useFetch(`http://127.0.0.1:8000/api/users`,{
+            const { data, pending, error } = await useFetch(config.public.BASE_URL+`/users`,{
                       method:"GET",
                       headers:{
                         Accept: "application/json",
@@ -119,7 +120,7 @@
                 }).then((result) => {
                 if (result.isConfirmed) {
                     // try{
-                        useFetch(`http://127.0.0.1:8000/api/users/${user}`,{
+                        useFetch(config.public.BASE_URL+`/users/${user}`,{
                                 method:"DELETE",
                                 headers:{
                                     Accept: "application/json",

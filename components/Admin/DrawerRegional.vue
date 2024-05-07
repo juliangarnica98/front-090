@@ -68,10 +68,11 @@
             type="text"
             id="name"
             v-model="form.description"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="bg-gray-50 border uppercase border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder=""
             required
           />
+          <span v-if="errors.description" class="text-red-500"> {{ errors.description[0] }}</span>
         </div>
         <button
           class="w-full text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
@@ -88,7 +89,9 @@
       const { $swal } = useNuxtApp();
       const token = useTokenStore();
       const regionals = ref([]);
+      const errors= ref([]);
       const closeDrawerBtn = ref();
+      const config = useRuntimeConfig();
   
       const emit = defineEmits(['someEvent'])
   
@@ -98,7 +101,7 @@
       
       const submit = async ()=>{
           try{
-            await $fetch(`http://127.0.0.1:8000/api/regionals`,{
+            await $fetch(config.public.BASE_URL+`/regionals`,{
                      method:"POST",
                      headers:{
                        Accept: "application/json",
@@ -110,7 +113,7 @@
               $swal.fire({title: "Se registro correctamente", icon: "success", timer: 2000,})
               resetForm();
         }catch (error){
-          // errors.value = error.data.errors;
+          errors.value = error.data.errors;
         }
       }
       function resetForm (){

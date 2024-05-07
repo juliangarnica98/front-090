@@ -72,6 +72,7 @@
             <div class="" >{{ regional.description }}</div>
           </option>
         </select>
+        <span v-if="errors.regional" class="text-red-500"> Debe seleccionar una regional</span>
       </div>
       <div class="mb-2">
         <label
@@ -118,6 +119,7 @@
           placeholder=""
           required
         />
+        <span v-if="errors.email" class="text-red-500"> {{ errors.email[0] }}</span>
       </div>
       <div class="mb-2">
         <label
@@ -133,6 +135,7 @@
           placeholder=""
           required
         />
+        <span v-if="errors.password" class="text-red-500"> {{ errors.password[0] }}</span>
       </div>
       <div class="mb-2">
         <label
@@ -166,7 +169,8 @@
     const token = useTokenStore();
     const regionals = ref([]);
     const closeDrawerBtn = ref();
-
+    const errors= ref([]);
+    const config = useRuntimeConfig();
 
     const props = defineProps({
         regional: String,
@@ -183,7 +187,7 @@
         role:'Generalist'
     });
     const regionalf = async () => {
-        const { data, pending, error } = await useFetch(`http://127.0.0.1:8000/api/regionals2`,{
+        const { data, pending, error } = await useFetch(config.public.BASE_URL+`/regionals2`,{
                   method:"GET",
                   headers:{
                     Accept: "application/json",
@@ -196,7 +200,7 @@
     }
     const submit = async ()=>{
         try{
-          await $fetch(`http://127.0.0.1:8000/api/register`,{
+          await $fetch(config.public.BASE_URL+`/register`,{
                    method:"POST",
                    headers:{
                      Accept: "application/json",
@@ -209,7 +213,7 @@
             resetForm();
             closeDrawerBtn.click();
       }catch (error){
-        // errors.value = error.data.errors;
+        errors.value = error.data.errors;
       }
     }
     function resetForm (){

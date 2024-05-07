@@ -45,6 +45,7 @@
                placeholder=""
                required
              />
+             <span v-if="errors.description" class="text-red-500"> {{ errors.description[0] }}</span>
            </div>
          
         
@@ -63,6 +64,8 @@
      const token = useTokenStore();
      const regionals = ref([]);
      const closeDrawerBtn = ref();
+     const config = useRuntimeConfig();
+     const errors= ref([]);
  
  
      const props = defineProps({
@@ -77,7 +80,7 @@
 
      const submit = async ()=>{
          try{
-           await $fetch(`http://127.0.0.1:8000/api/questions/${props.question.id}`,{
+           await $fetch(config.public.BASE_URL+`/questions/${props.question.id}`,{
                     method:"PUT",
                     headers:{
                       Accept: "application/json",
@@ -90,7 +93,7 @@
          
              closeDrawerBtn.click();
        }catch (error){
-         // errors.value = error.data.errors;
+         errors.value = error.data.errors;
        }
      }
      onMounted(async () => { 

@@ -124,6 +124,7 @@
 import { nextTick } from "vue";
 const token = useTokenStore();
 const { $swal } = useNuxtApp();
+const config = useRuntimeConfig();
 const users = ref([]);
 useHead({
   title: "users",
@@ -134,7 +135,7 @@ definePageMeta({
 const product = async () => {
   try {
           const { data, pending, error } = await useFetch(
-          `http://127.0.0.1:8000/api/users`,
+            config.public.BASE_URL+`/users`,
           {
             method: "GET",
             headers: {
@@ -159,7 +160,7 @@ const deleteu = async (user)=>{
                 }).then((result) => {
                 if (result.isConfirmed) {
                     // try{
-                        useFetch(`http://127.0.0.1:8000/api/users/${user}`,{
+                        useFetch(config.public.BASE_URL+`/users/${user}`,{
                                 method:"DELETE",
                                 headers:{
                                     Accept: "application/json",

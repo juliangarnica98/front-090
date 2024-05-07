@@ -19,7 +19,7 @@
                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >Tienda</label
               >
-              <select
+              <select required
                 v-model="form.store"
                 id="regional"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -28,6 +28,7 @@
                   {{ store.description }}
                 </option>
               </select>
+              <span v-if="errors.description" class="text-red-500"> {{ errors.description[0] }}</span>
             </div>
             <div class="mb-2">
               <label
@@ -74,6 +75,7 @@
                 placeholder=""
                 required
               />
+              <span v-if="errors.email" class="text-red-500"> {{ errors.email[0] }}</span>
             </div>
             <div class="mb-2">
               <label
@@ -89,6 +91,7 @@
                 placeholder=""
                 required
               />
+              <span v-if="errors.password" class="text-red-500"> {{ errors.password[0] }}</span>
             </div>
             <div class="mb-2">
               <label
@@ -123,6 +126,8 @@
       const token = useTokenStore();
       const stores = ref([]);
       const closeDrawerBtn = ref();
+      const config = useRuntimeConfig();
+      const errors= ref([]);
   
   
       const props = defineProps({
@@ -144,7 +149,7 @@
         role:'Boss'
       });
       const regionalf = async () => {
-          const { data, pending, error } = await useFetch(`http://127.0.0.1:8000/api/getstores`,{
+          const { data, pending, error } = await useFetch(config.public.BASE_URL+`/getstores`,{
                     method:"GET",
                     headers:{
                       Accept: "application/json",
@@ -155,7 +160,7 @@
       }
       const submit = async ()=>{
           try{
-            await $fetch(`http://127.0.0.1:8000/api/users/${props.user.id}`,{
+            await $fetch(config.public.BASE_URL+`/users/${props.user.id}`,{
                      method:"PUT",
                      headers:{
                        Accept: "application/json",
@@ -167,7 +172,7 @@
               $swal.fire({title: "Se registro correctamente", icon: "success", timer: 2000,})
               closeDrawerBtn.click();
         }catch (error){
-          // errors.value = error.data.errors;
+           errors.value = error.data.errors;
         }
       }
 
