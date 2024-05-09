@@ -13,7 +13,7 @@
             <div class="flex contenedor overflow-x-auto">
               <div  class="max-w-lg min-w-60 m-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
-                  <img src="/public/img/photo.jpeg" class="rounded-t-lg" alt="">
+                  <img src="/public/img/1.jpg" class="rounded-t-lg" alt="">
                 </a>
                 <div class="p-5 ">
                     <a href="#">
@@ -37,7 +37,7 @@
               </div>
               <div class="max-w-lg min-w-60 m-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
-                  <img src="/public/img/week2.jpg" class="rounded-t-lg" alt="">
+                  <img src="/public/img/11.jpg" class="rounded-t-lg" alt="">
                 </a>
                 <div class="p-5 ">
                     <a href="#">
@@ -45,7 +45,7 @@
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Comenzamos la segunda semana de nuestro acompañamiento, nos gustaria que nos compartas el detalle de las siguientes preguntas</p>
                     <div class="" v-if="!validate.includes(2)">
-                      <nuxt-link v-if="2<=sem  "  :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<2}" class=" w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-500 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-pink-300 dark:hover:bg-blue-700 dark:focus:ring-blue-800" to="/boss/question/2">
+                      <nuxt-link v-if="2<=sem  "  :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<2}" class=" w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-800 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-purple-500 dark:hover:bg-gray-400 dark:focus:ring-blue-800" to="/boss/question/2">
                         <p class="text-center">INGRESAR</p>
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -61,7 +61,7 @@
               </div>
               <div class="max-w-lg min-w-60 m-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
-                  <img src="/public/img/photo.jpeg" class="rounded-t-lg" alt="">
+                  <img src="/public/img/3.jpg" class="rounded-t-lg" alt="">
                 </a>
                 <div class="p-5 ">
                     <a href="#">
@@ -70,7 +70,7 @@
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Comenzamos la tercera semana de nuestro acompañamiento, nos gustaria que nos compartas el detalle de las siguientes preguntas</p>
                     <div class="" v-if="!validate.includes(3)">
 
-                      <nuxt-link v-if="3<=sem "  :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<3}" class=" w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-500 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-pink-300 dark:hover:bg-blue-700 dark:focus:ring-blue-800" to="/boss/question/3">
+                      <nuxt-link v-if="3<=sem "  :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<3}" class=" w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-800 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-purple-500 dark:hover:bg-gray-400 dark:focus:ring-blue-800" to="/boss/question/3">
                         <p class="text-center">INGRESAR</p>
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -86,7 +86,7 @@
               </div>
               <div class="max-w-lg min-w-60 m-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
-                  <img src="/public/img/photo.jpeg" class="rounded-t-lg" alt="">
+                  <img src="/public/img/4.jpg" class="rounded-t-lg" alt="">
                 </a>
                 <div class="p-5 ">
                     <a href="#">
@@ -94,7 +94,7 @@
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Comenzamos la cuarta semana de nuestro acompañamiento, nos gustaria que nos compartas el detalle de las siguientes preguntas</p>
                     <div class="" v-if="!validate.includes(4)">
-                      <nuxt-link v-if="4<=sem " :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<4}" class=" w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-500 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-pink-300 dark:hover:bg-blue-700 dark:focus:ring-blue-800" to="/boss/question/4">
+                      <nuxt-link v-if="4<=sem " :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<4}" class=" w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-800 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-purple-500 dark:hover:bg-gray-400 dark:focus:ring-blue-800" to="/boss/question/4">
                         <p class="text-center">INGRESAR</p>
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -110,7 +110,7 @@
               </div>
               <div class="max-w-lg min-w-60 m-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
-                  <img src="/public/img/photo.jpeg" class="rounded-t-lg" alt="">
+                  <img src="/public/img/5.jpg" class="rounded-t-lg" alt="">
                 </a>
                 <div class="p-5 ">
                     <a href="#">
@@ -118,7 +118,7 @@
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Comenzamos la quinta semana de nuestro acompañamiento, nos gustaria que nos compartas el detalle de las siguientes preguntas</p>
                     <div class="" v-if="!validate.includes(5)">
-                      <nuxt-link v-if="5<=sem " :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<5}" class=" w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-500 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-pink-300 dark:hover:bg-blue-700 dark:focus:ring-blue-800" to="/boss/question/5">
+                      <nuxt-link v-if="5<=sem " :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<5}" class=" w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-800 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-purple-500 dark:hover:bg-gray-400 dark:focus:ring-blue-800" to="/boss/question/5">
                         <p class="text-center">INGRESAR</p>
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -134,7 +134,7 @@
               </div>
               <div class="max-w-lg min-w-60 m-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
-                  <img src="/public/img/photo.jpeg" class="rounded-t-lg" alt="">
+                  <img src="/public/img/6.jpg" class="rounded-t-lg" alt="">
                 </a>
                 <div class="p-5 ">
                     <a href="#">
@@ -142,7 +142,7 @@
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Comenzamos la sexta semana de nuestro acompañamiento, nos gustaria que nos compartas el detalle de las siguientes preguntas</p>
                     <div class="" v-if="!validate.includes(6)">
-                      <nuxt-link v-if="6<=sem " :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<6}" class=" w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-500 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-pink-300 dark:hover:bg-blue-700 dark:focus:ring-blue-800" to="/boss/question/6">
+                      <nuxt-link v-if="6<=sem " :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<6}" class=" w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-800 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-purple-500 dark:hover:bg-gray-400 dark:focus:ring-blue-800" to="/boss/question/6">
                         <p class="text-center">INGRESAR</p>
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -158,7 +158,7 @@
               </div>
               <div class="max-w-lg min-w-60 m-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
-                  <img src="/public/img/photo.jpeg" class="rounded-t-lg" alt="">
+                  <img src="/public/img/7.jpg" class="rounded-t-lg" alt="">
                 </a>
                 <div class="p-5 ">
                     <a href="#">
@@ -167,7 +167,7 @@
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Comenzamos la septima semana de nuestro acompañamiento, nos gustaria que nos compartas el detalle de las siguientes preguntas</p>
                     <div class="" v-if="!validate.includes(7)">
 
-                      <nuxt-link v-if="7<=sem " :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<7}" class=" w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-500 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-pink-300 dark:hover:bg-blue-700 dark:focus:ring-blue-800" to="/boss/question/7">
+                      <nuxt-link v-if="7<=sem " :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<7}" class=" w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-800 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-purple-500 dark:hover:bg-gray-400 dark:focus:ring-blue-800" to="/boss/question/7">
                         <p class="text-center">INGRESAR</p>
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -183,7 +183,7 @@
               </div>
               <div class="max-w-lg min-w-60 m-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
-                  <img src="/public/img/photo.jpeg" class="rounded-t-lg" alt="">
+                  <img src="/public/img/8.jpg" class="rounded-t-lg" alt="">
                 </a>
                 <div class="p-5 ">
                     <a href="#">
@@ -191,7 +191,7 @@
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Comenzamos la octava semana de nuestro acompañamiento, nos gustaria que nos compartas el detalle de las siguientes preguntas</p>
                     <div class="" v-if="!validate.includes(8)">
-                      <nuxt-link v-if="8<=sem" :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<8}" class=" w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-500 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-pink-300 dark:hover:bg-blue-700 dark:focus:ring-blue-800" to="/boss/question/8">
+                      <nuxt-link v-if="8<=sem" :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<8}" class="w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-800 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-purple-500 dark:hover:bg-gray-400 dark:focus:ring-blue-800" to="/boss/question/8">
                         <p class="text-center">INGRESAR</p>
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -207,7 +207,7 @@
               </div>
               <div class="max-w-lg min-w-60 m-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
-                  <img src="/public/img/photo.jpeg" class="rounded-t-lg" alt="">
+                  <img src="/public/img/9.jpg" class="rounded-t-lg" alt="">
                 </a>
                 <div class="p-5 ">
                     <a href="#">
@@ -215,7 +215,7 @@
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Comenzamos la novena semana de nuestro acompañamiento, nos gustaria que nos compartas el detalle de las siguientes preguntas</p>
                     <div class="" v-if="!validate.includes(9)">
-                      <nuxt-link v-if="9<=sem " :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<9}" class=" w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-500 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-pink-300 dark:hover:bg-blue-700 dark:focus:ring-blue-800" to="/boss/question/9">
+                      <nuxt-link v-if="9<=sem " :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<9}" class="w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-800 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-purple-500 dark:hover:bg-gray-400 dark:focus:ring-blue-800" to="/boss/question/9">
                         <p class="text-center">INGRESAR</p>
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -231,7 +231,7 @@
               </div>
               <div class="max-w-lg min-w-60 m-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
-                  <img src="/public/img/photo.jpeg" class="rounded-t-lg" alt="">
+                  <img src="/public/img/10.jpg" class="rounded-t-lg" alt="">
                 </a>
                 <div class="p-5 ">
                     <a href="#">
@@ -240,7 +240,7 @@
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Comenzamos la decima semana de nuestro acompañamiento, nos gustaria que nos compartas el detalle de las siguientes preguntas</p>
                     <div class="" v-if="!validate.includes(10)">
 
-                      <nuxt-link  v-if="10<=sem " :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<10}" class=" w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-500 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-pink-300 dark:hover:bg-blue-700 dark:focus:ring-blue-800" to="/boss/question/10">
+                      <nuxt-link  v-if="10<=sem " :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<10}" class="w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-800 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-purple-500 dark:hover:bg-gray-400 dark:focus:ring-blue-800" to="/boss/question/10">
                         <p class="text-center">INGRESAR</p>
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -256,7 +256,7 @@
               </div>
               <div class="max-w-lg min-w-60 m-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
-                  <img src="/public/img/photo.jpeg" class="rounded-t-lg" alt="">
+                  <img src="/public/img/11.jpg" class="rounded-t-lg" alt="">
                 </a>
                 <div class="p-5 ">
                     <a href="#">
@@ -264,7 +264,7 @@
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Comenzamos la semana once de nuestro acompañamiento, nos gustaria que nos compartas el detalle de las siguientes preguntas</p>
                     <div class="" v-if="!validate.includes(11)">
-                      <nuxt-link  v-if="11<=sem" :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<11}" class=" w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-500 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-pink-300 dark:hover:bg-blue-700 dark:focus:ring-blue-800" to="/boss/question/11">
+                      <nuxt-link  v-if="11<=sem" :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<11}" class="w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-800 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-purple-500 dark:hover:bg-gray-400 dark:focus:ring-blue-800" to="/boss/question/11">
                         <p class="text-center">INGRESAR</p>
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
@@ -280,7 +280,7 @@
               </div>
               <div class="max-w-lg min-w-60 m-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
-                  <img src="/public/img/photo.jpeg" class="rounded-t-lg" alt="">
+                  <img src="/public/img/3.jpg" class="rounded-t-lg" alt="">
                 </a>
                 <div class="p-5 ">
                     <a href="#">
@@ -288,7 +288,7 @@
                     </a>
                     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Felicidades! Nos encontramos en la semana final de nuestro seguimiento, gracias por tu empeño y dedicaci?n con el programa. Y a su vez pido de que me amplies la información  ...</p>
                     <div class="" v-if="!validate.includes(12)">
-                      <nuxt-link  v-if="12<=sem" :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<12}" class=" w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-500 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-pink-300 dark:hover:bg-blue-700 dark:focus:ring-blue-800" to="/boss/question/12">
+                      <nuxt-link  v-if="12<=sem" :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<12}" class="w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-800 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-purple-500 dark:hover:bg-gray-400 dark:focus:ring-blue-800" to="/boss/question/12">
                         <!-- <nuxt-link  v-if="12<=sem && sem<13" :class="{'disabled bg-purple-500 dark:bg-pink-800 dark:border-pink-700 dark:hover:bg-pink-700 text-center': sem<12}" class=" w-full rounded-full flex items-center content-center justify-center px-3 py-2 text-sm font-medium text-gray-500 bg-white rounded-full border border-gray-300 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-pink-300 dark:hover:bg-blue-700 dark:focus:ring-blue-800" to="/boss/question/12"></nuxt-link> -->
                         <p class="text-center">INGRESAR</p>
                         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
